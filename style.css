@@ -32,6 +32,7 @@ nav{
 
 .searchInput::placeholder{
     color: lightgrey;
+    padding: 5px;
 }
 
 .limitedOffer{
@@ -76,7 +77,13 @@ nav{
     justify-content: center;
     position: relative;
 }
-
+.sliderBg{
+    width: 750px;
+    height: 750px;
+    border-radius: 50%;
+    background-color: yellow;
+    position: absolute;
+}
 .sliderTitle{
     position: absolute;
     top: 10%;
@@ -85,6 +92,7 @@ nav{
     font-size: 60px;
     font-weight: 900;
     text-align: center;
+    z-index: 1;
 }
 
 .sliderPrice{
@@ -97,5 +105,59 @@ nav{
     text-align: center;
     border: 1px solid black;
     padding: 5px;
+    z-index: 1;
+}
+.buyButton{
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    color: white;
+    font-size: 30px;
+    font-weight: 300;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+    z-index: 1;
+    cursor: pointer;
+    background: #111;
+}
+
+.buyButton:hover{
+    background: white;
+    color: #111;
+}
+.sliderImg{
+    z-index: 1;
+}
+
+
+.sliderItem:nth-child(1) .sliderBg{
+    background-color: blue;
+}
+.sliderItem:nth-child(2){
+    background-color:darkgreen;
+}
+.sliderItem:nth-child(2) .sliderBg{
+    background-color:lightcoral;
+}
+.sliderItem:nth-child(3){
+    background-color:purple;
+}
+.sliderItem:nth-child(3) .sliderBg{
+    background-color:firebrick;
+}
+.sliderItem:nth-child(4){
+    background-color:gold;
+}
+.sliderItem:nth-child(4) .sliderBg{
+    background-color:tomato;
+}
+.sliderItem:nth-child(5){
+    background-color:indigo;
+}
+
+.sliderItem:nth-child(5) .sliderBg{
+    background-color: lawngreen
+    
 }
 
