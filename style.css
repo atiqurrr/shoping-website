@@ -58,16 +58,22 @@ nav{
     font-weight: 400;
 }
 
+.menuItem:hover{
+    background-color: white;
+    color: #111;
+}
 .slider{
     background: lightblue;
-    /* -webkit-clip-path: polygon(0 1%, 100% 1%, 100% 100%, 2% 85%); */
-    /* clip-path: polygon(0 1%, 100% 1%, 100% 100%, 2% 85%); */
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%); 
+    overflow: hidden;
+
     
 }
 
 .sliderWrapper{
     display: flex;
     width: 500vw;
+    transition: all 1.5s ease-in-out;
 }
 
 .sliderItem{
@@ -159,5 +165,11 @@ nav{
 .sliderItem:nth-child(5) .sliderBg{
     background-color: lawngreen
     
+}
+
+.features{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
