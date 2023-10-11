@@ -10,11 +10,11 @@ const products = [
       colors: [
         {
           code: "black",
-          img: "./img/air.png",
+          img: "./images/air.png",
         },
         {
           code: "darkblue",
-          img: "./img/air2.png",
+          img: "./images/air2.png",
         },
       ],
     },
@@ -25,11 +25,11 @@ const products = [
       colors: [
         {
           code: "lightgray",
-          img: "./img/jordan.png",
+          img: "./images/jordan.png",
         },
         {
           code: "green",
-          img: "./img/jordan2.png",
+          img: "./images/jordan2.png",
         },
       ],
     },
@@ -40,11 +40,11 @@ const products = [
       colors: [
         {
           code: "lightgray",
-          img: "./img/blazer.png",
+          img: "./images/blazer.png",
         },
         {
           code: "green",
-          img: "./img/blazer2.png",
+          img: "./images/blazer2.png",
         },
       ],
     },
@@ -55,11 +55,11 @@ const products = [
       colors: [
         {
           code: "black",
-          img: "./img/crater.png",
+          img: "./images/crater.png",
         },
         {
           code: "lightgray",
-          img: "./img/crater2.png",
+          img: "./images/crater2.png",
         },
       ],
     },
@@ -70,11 +70,11 @@ const products = [
       colors: [
         {
           code: "gray",
-          img: "./img/hippie.png",
+          img: "./images/hippie.png",
         },
         {
           code: "black",
-          img: "./img/hippie2.png",
+          img: "./images/hippie2.png",
         },
       ],
     },
@@ -83,14 +83,14 @@ const products = [
   let choosenProduct = products[0];
  // console.log(choosenProduct)
 
-const currentProductImage = document.querySelector("productImg");
-console.log(currentProductImage)
+const currentProductImage = document.getElementById("pdImage");
+
 const currentProductTitle = document.querySelector(".productTitle");
 const currentProductPrice = document.querySelector(".productPrice");
 const currentProductColor = document.querySelectorAll(".color");
 const currentProductSize = document.querySelectorAll(".size");
 
-menuItems.forEach((item, index)=>{
+ menuItems.forEach((item, index)=>{
     item.addEventListener("click", ()=>{
         wrapper.style.transform = `translateX(${-100 * index}vw)`
 
@@ -102,11 +102,26 @@ menuItems.forEach((item, index)=>{
         // change texts of current products 
 
         currentProductTitle.textContent = choosenProduct.title;
-        currentProductPrice.textContent = "$ "  + choosenProduct.price;
-        currentProductImage.src = choosenProduct.colors[0].img
-        
+        currentProductPrice.textContent = "$"  + choosenProduct.price;
+      
+        currentProductImage.src=choosenProduct.colors[0].img;
+        console.log(currentProductImage.src)
+       
+      // color change 
+
+      currentProductColor.forEach((color, index)=>{
+         color.style.backgroundColor = choosenProduct.colors[index].code;
+      })
 
 
         
     })
 })
+
+
+currentProductColor.forEach((color, i)=>{
+  color.addEventListener("click", ()=>{
+    currentProductImage.src=choosenProduct.colors[i].img;
+  })
+})
+
