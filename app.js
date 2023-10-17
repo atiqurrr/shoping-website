@@ -125,3 +125,31 @@ currentProductColor.forEach((color, i)=>{
   })
 })
 
+
+currentProductSize.forEach((size, index)=>{
+  size.addEventListener("click",()=>{
+    currentProductSize.forEach((size, index)=>{
+      size.style.backgroundColor = "white"
+      size.style.color = "black"
+    })
+    size.style.backgroundColor = "black"
+    size.style.color = "white"
+  })
+})
+
+const productBtn = document.querySelector(".productButton")
+
+const payment = document.querySelector(".payment")
+const closeWindow = document.querySelector(".close")
+
+
+productBtn.addEventListener("click", ()=>{
+  payment.style.display = "flex"
+})
+
+closeWindow.addEventListener("click", ()=>{
+  payment.style.display = "none"
+})
+
+
+
